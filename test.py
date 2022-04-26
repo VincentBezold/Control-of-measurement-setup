@@ -3,11 +3,7 @@ from PyQt5.QtWidgets import QApplication
 from PyQt5.QtWidgets import QMainWindow
 from OphirComDriver import OphirComDriver
 from MainUIWindow import Ui_MainWindow
-<<<<<<< HEAD
 # comment to better understand the code
-=======
-#pth comment
->>>>>>> branch2
 class test:
     def __init__(self):
         self.main_win = QMainWindow()
