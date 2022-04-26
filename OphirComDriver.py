@@ -21,6 +21,13 @@ class OphirComDriver:
         time.sleep(.2)	
         data = self.OphirCOM.GetData(self.DeviceHandle, 0)
         return data[0][0]
+ 
+    def changeRange(self, range):
+        ranges = self.OphirCOM.GetRanges(self.DeviceHandle, 0)
+        newRange = ranges[range]
+        self.OphirCOM.SetRange(self.DeviceHandle, 0, newRange)
+
+
 
 
 
