@@ -50,15 +50,15 @@ void setup() {
 void loop() {
 
   ActTime = millis();
-   if (ActTime - LastEx > 1000 * Measuring_Period - float(Ex_Duration)||doMeasurement) {
-   //if (doMeasurement) { //activate ONLY this for Python only
+   //if (ActTime - LastEx > 1000 * Measuring_Period - float(Ex_Duration)||doMeasurement) {
+   if (doMeasurement) { //activate ONLY this for Python only
     doMeasurement = false;
     
     digitalWrite(TriggerVR1, 0);  // sets the Output 0  Vref1=on
     digitalWrite(TriggerVR2, 0);  // sets the Output 0  Vref2=on
     delay(Ex_Duration);
 
-    DataString = "P1:" + String(ads.readADC_SingleEnded(0)) + "P2:" + String(ads.readADC_SingleEnded(1)) + "P3:" + String(ads.readADC_SingleEnded(2)) + "P4:" + String(ads.readADC_SingleEnded(3)) + "D:" + String(Ex_Duration) + "P:" + String(Measuring_Period);
+    DataString =  String(ads.readADC_SingleEnded(0)) + "," + String(ads.readADC_SingleEnded(1)) + "," + String(ads.readADC_SingleEnded(2)) + "," + String(ads.readADC_SingleEnded(3)) + "," + String(Ex_Duration) + "," + String(Measuring_Period);
 
 
     digitalWrite(TriggerVR1, 1);  // sets the Output 1  Vref1=off

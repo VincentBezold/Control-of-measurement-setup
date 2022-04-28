@@ -40,7 +40,7 @@
      <string>GetPower</string>
     </property>
    </widget>
-   <widget class="QLabel" name="Label1_2">
+   <widget class="QLabel" name="Label2">
     <property name="geometry">
      <rect>
       <x>190</x>
@@ -53,7 +53,7 @@
      <string>GetPosition</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="pushButton2">
     <property name="geometry">
      <rect>
       <x>190</x>
