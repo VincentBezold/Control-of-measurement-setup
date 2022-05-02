@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'c:\Users\Labuser\Documents\PythonTest\UiTest\UIWindow.ui'
+# Form implementation generated from reading ui file 'c:\Users\Labuser\Documents\PythonTest\UiTest\UITestWindow.ui'
 #
 # Created by: PyQt6 UI code generator 6.1.0
 #
@@ -12,27 +12,18 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(792, 600)
+        MainWindow.resize(1264, 600)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.Label1 = QtWidgets.QLabel(self.centralwidget)
-        self.Label1.setGeometry(QtCore.QRect(60, 10, 141, 41))
+        self.Label1.setGeometry(QtCore.QRect(140, 70, 141, 41))
         self.Label1.setObjectName("Label1")
-        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(40, 70, 75, 23))
-        self.pushButton.setObjectName("pushButton")
-        self.Label2 = QtWidgets.QLabel(self.centralwidget)
-        self.Label2.setGeometry(QtCore.QRect(190, 10, 141, 41))
-        self.Label2.setObjectName("Label2")
-        self.pushButton2 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton2.setGeometry(QtCore.QRect(190, 70, 75, 23))
-        self.pushButton2.setObjectName("pushButton2")
         self.radioButton = QtWidgets.QRadioButton(self.centralwidget)
-        self.radioButton.setGeometry(QtCore.QRect(40, 110, 82, 17))
+        self.radioButton.setGeometry(QtCore.QRect(130, 130, 82, 17))
         self.radioButton.setObjectName("radioButton")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 792, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1264, 21))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -46,7 +37,4 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.Label1.setText(_translate("MainWindow", "TextLabel"))
-        self.pushButton.setText(_translate("MainWindow", "GetPower"))
-        self.Label2.setText(_translate("MainWindow", "GetPosition"))
-        self.pushButton2.setText(_translate("MainWindow", "GetPosition"))
-        self.radioButton.setText(_translate("MainWindow", "Get Power"))
+        self.radioButton.setText(_translate("MainWindow", "RadioButton"))

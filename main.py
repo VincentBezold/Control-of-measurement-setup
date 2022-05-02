@@ -1,4 +1,8 @@
 import sys
+import threading
+import time
+import random
+import concurrent.futures
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtWidgets import QMainWindow
 from OphirComDriver import OphirComDriver
@@ -13,8 +17,8 @@ class main:
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self.main_win)
         self.ui.pushButton.clicked.connect(self.getValue)
-        self.ui.pushButton2.clicked.connect(self.getValuePositionPiezo)
-
+        # self.ui.pushButton2.clicked.connect(self.getValuePositionPiezo)
+        self.ui.radioButton.clicked.connect(self.threadThreading)
     def show(self):
         self.main_win.show()
 
@@ -23,9 +27,24 @@ class main:
         power = OphirValue.getData()
         self.ui.Label1.setText(str(power))
 
+    def threadThreading(self, devicefunction):
+        if self.ui.radioButton.isChecked():
+            t1 = threading.Thread(target=self.getValuePositionPiezo)
+            t1.start()
+
+    # def threading(self):
+    #     if self.ui.radioButton.isChecked():
+    #         with concurrent.futures.ThreadPoolExecutor() as executor:
+    #             f = executor.submit(self.getValuePositionPiezo)
+
     def getValuePositionPiezo(self):
-        position = self.Arduino.write_read()
-        self.ui.Label2.setText(str(position))
+        # start = time.perf_counter()
+        while self.ui.radioButton.isChecked():
+            position = self.Arduino.write_read()
+            self.ui.Label2.setText(str(position))
+            # finish = time.perf_counter()
+
+            # print(f'Finished in {round(finish-start, 2)} second(s)')
 
 
 
