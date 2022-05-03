@@ -1,19 +1,6 @@
-# import pyvisa
-# rm = pyvisa.ResourceManager()
-# print(rm.list_resources())
-import pyvisa
-import json, os
-# import numpy as np
-from datetime import datetime
-
-class PiezoDriver:
-    def __init__(self):
-        rm = pyvisa.ResourceManager()
-        self.inst = rm.open_resource('ASRL9::INSTR')
-        test = 1
-        
-    
-
-test = PiezoDriver()
-# test.setUnit('a', 'l')
-# print(test.readTemp('a'))
+import qcodes as qc
+from ANC300 import ANC300
+# https://qcodes.github.io/Qcodes_contrib_drivers/examples/Attocube_ANC300.html
+ANC = ANC300( name='ANC300', address='ASRL9::INSTR' )
+axis1 = ANC.submodules['axis1']
+print( "FREQ ", axis1.frequency())
