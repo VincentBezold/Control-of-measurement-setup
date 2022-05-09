@@ -374,6 +374,7 @@ class ANC300(VisaInstrument):
         log.debug("Main version:", self.idn)
         if not self.idn.startswith("attocube ANC300"):
             raise RuntimeError("Invalid device ID found: "+str(self.idn))
+            
 
         # Now request all serial numbers of the axis modules. The first 6 chars are the id
         # of the module type. This will be used to enable special parameters.
@@ -416,6 +417,7 @@ class ANC300(VisaInstrument):
         Raises:
             RuntimeError: if Error-Message from the device is read.
         """
+         
         status = super().ask_raw(cmd) # send the command to the device and read the echo/status
         if status == cmd:
             # now the device sends an echo
@@ -432,7 +434,7 @@ class ANC300(VisaInstrument):
         return
 
 
-
+ 
     def ask_raw(self, cmd: str) -> str:
         """Query instrument with cmd and return response.
         
