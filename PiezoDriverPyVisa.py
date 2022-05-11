@@ -9,6 +9,17 @@ class PiezoDriver:
         rm = pyvisa.ResourceManager() # some visa magic
         self.inst = rm.open_resource('ASRL9::INSTR') # opens port
         self.inst.baud_rate = 38400 # sets baudrate
+        self.driverconfig ={
+        "sleeptime": 10,
+        "Stepvoltage": 25,
+        }
+
+    def getConfig(self): 
+        return self.driverconfig
+
+    def addConfig(self, toAddValue):
+            self.driverconfig.update(toAddValue)
+
                 
     def moveContinuesUp(self, channel):
         time.sleep(1)

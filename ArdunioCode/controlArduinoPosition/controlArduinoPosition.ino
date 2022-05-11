@@ -50,8 +50,8 @@ void setup() {
 void loop() {
 
   ActTime = millis();
-   //if (ActTime - LastEx > 1000 * Measuring_Period - float(Ex_Duration)||doMeasurement) {
-   if (doMeasurement) { //activate ONLY this for Python only
+   if (ActTime - LastEx > 1000 * Measuring_Period - float(Ex_Duration)||doMeasurement) {
+   //if (doMeasurement) { //activate ONLY this for Python only
     doMeasurement = false;
     
     digitalWrite(TriggerVR1, 0);  // sets the Output 0  Vref1=on
