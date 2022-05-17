@@ -12,6 +12,8 @@ from MainUIWindow import Ui_MainWindow
 from ArduinoDriver import ArduinoDriver
 from PiezoDriverPyVisa import PiezoDriver
 
+# To do: integration of slider with help of dynamcly creating varibel names
+
 # comment to better understand the code
 #  python -m PyQt5.uic.pyuic UIWindow.ui -o MainUIWindow.py
 class main:
@@ -21,13 +23,30 @@ class main:
         
         # self.Arduino = ArduinoDriver()
         self.ui = Ui_MainWindow()
-        # self.piezoDriver = PiezoDriver()
+        self.piezoDriver = PiezoDriver()
         self.ui.setupUi(self.main_win)
         self.ui.pushButton.clicked.connect(self.getValue)
         self.ui.radioButton.clicked.connect(self.threadThreading)
-        # self.ui.gridLayout.pushButton_3.clicked.connect()
+        self.ui.contUpGroup.buttonClicked.connect(self.contUp)
+        self.ui.stepUpGroup.buttonClicked.connect(self.stepUp)
+        
+        
+        aa = 1
+        # self.ui.contDownGroup.buttonClicked.connect(self.contDown)
+        # self.ui.stepDownGroup.buttonClicked.connect(self.stepDown)
+
     def show(self):
         self.main_win.show()
+        
+
+    def contUp(self, button):
+        button_number = int(button.objectName()[7:])
+        self.test = self.ui.horizontalSlider.value()
+        # self.piezoDriver.moveContinuesUp(button_number)
+
+    def stepUp(self, button):
+        button_number = int(button.objectName()[7:])
+        # self.piezoDriver.stepUp(button_number, numberSteps)
 
     def getValue(self):
         OphirValue = OphirComDriver()
